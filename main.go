@@ -104,7 +104,7 @@ func loadLegacyOptions(config string, extraFlags *pflag.FlagSet, args []string) 
 // the new alpha format, then merges the alpha options, loaded from YAML,
 // into the core configuration.
 func loadAlphaOptions(config, alphaConfig string, extraFlags *pflag.FlagSet, args []string) (*options.Options, error) {
-	opts, err := loadOptions(config, extraFlags, args)
+	opts, err := loadLegacyOptions(config, extraFlags, args)
 	if err != nil {
 		return nil, fmt.Errorf("failed to load core options: %v", err)
 	}
